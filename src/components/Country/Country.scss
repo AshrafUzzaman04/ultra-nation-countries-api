@@ -1,0 +1,18 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+.element_country {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ddd;
+  margin: 20px 0;
+  height: max-content;
+  width: 260px;
+  padding: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+}

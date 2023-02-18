@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import Country from "./components/Country/Country";
 
 function App() {
   const [counties, setCounties] = useState([]);
@@ -7,19 +8,19 @@ function App() {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
       .then((data) => {
-        setCounties(data);
-      })
-      .catch((error) => console.log(error));
+        const allData = data.slice(0, data.length / 4);
+        setCounties(allData);
+      });
   }, []);
 
   return (
-    <div>
+    <div className="main_container">
       <h3>Total counties: {counties.length}</h3>
-      <ul>
+      <div className="countries_cart">
         {counties.map((country) => (
-          <li>{country.name.common}</li>
+          <Country key={country.ccn3} countrydata={country}></Country>
         ))}
-      </ul>
+      </div>
       <h1>Hellow Ultra-Nation</h1>
     </div>
   );
