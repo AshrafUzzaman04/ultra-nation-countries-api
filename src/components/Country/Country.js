@@ -4,6 +4,7 @@ import "./Country.css";
 const Country = (props) => {
   const { name, capital, area, languages, region, flags } = props.countrydata;
   console.log(props.countrydata);
+  console.log(languages);
   return (
     <div className="element_country">
       <h2 style={{ color: "blue" }}>Country: {name.common}</h2>
@@ -18,7 +19,7 @@ const Country = (props) => {
       <h4>Area: {area}</h4>
       <h5>
         Languages:
-        {Object.values(languages).join(", ")};
+        {/* {Object.values(languages).join(", ")}; */}
       </h5>
       <h6>Region: {region}</h6>
     </div>

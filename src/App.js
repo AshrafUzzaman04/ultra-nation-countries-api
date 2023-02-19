@@ -8,8 +8,8 @@ function App() {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
       .then((data) => {
-        const allData = data.slice(0, data.length / 4);
-        setCounties(allData);
+        // const allData = data);
+        setCounties(data);
       });
   }, []);
 

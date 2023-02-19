@@ -2,17 +2,14 @@ body {
   font-family: "Roboto", sans-serif;
 }
 .element_country {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 1px solid #ddd;
-  margin: 20px 0;
-  height: max-content;
-  width: 260px;
+  background-color: #dddddd93;
   padding: 10px;
-  background-color: #ddd;
+  text-align: center;
   border-radius: 5px;
+  line-height: 26px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  > h2 {
+    margin: 10px 0;
+  }
 }

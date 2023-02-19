@@ -8,13 +8,17 @@ body {
   font-family: "Roboto", sans-serif;
 }
 .main_container {
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   margin: auto;
 }
 .main_container .countries_cart {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
   justify-content: center;
   align-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
 }
