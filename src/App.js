@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import Country from "./components/Country/Country";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const [counties, setCounties] = useState([]);
@@ -10,15 +11,28 @@ function App() {
       .then((data) => {
         // const allData = data);
         setCounties(data);
-      });
+      })
+      .catch((error) => console.log(error));
   }, []);
+
+  // event handlers for country
+  const handleAddCountry = (country) => {
+    console.log("country added", country);
+  };
 
   return (
     <div className="main_container">
-      <h3>Total counties: {counties.length}</h3>
+      <h3>Total countries: {counties.length}</h3>
+      <h3>Total Added countries: {}</h3>
+      <Cart></Cart>
       <div className="countries_cart">
+        {/* map the component */}
         {counties.map((country) => (
-          <Country key={country.ccn3} countrydata={country}></Country>
+          <Country
+            key={country.ccn3}
+            handleAddCountry={handleAddCountry}
+            countrydata={country}
+          ></Country>
         ))}
       </div>
       <h1>Hellow Ultra-Nation</h1>
