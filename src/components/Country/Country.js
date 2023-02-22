@@ -2,7 +2,8 @@ import React from "react";
 import "./Country.css";
 
 const Country = (props) => {
-  const { name, capital, area, languages, region, flags } = props.countrydata;
+  const { name, capital, area, languages, region, flags, population } =
+    props.countrydata;
   const handleAddCountry = props.handleAddCountry;
 
   return (
@@ -16,6 +17,7 @@ const Country = (props) => {
         />
       </div>
       <h3>Capital: {capital}</h3>
+      <h3 style={{ color: "green" }}>Population: {population}</h3>
       <h4>Area: {area}</h4>
       <h5>
         Languages:{"  "}

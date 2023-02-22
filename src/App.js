@@ -5,6 +5,9 @@ import Cart from "./components/Cart/Cart";
 
 function App() {
   const [counties, setCounties] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState([]);
+
+  // fetch the country
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
@@ -17,16 +20,20 @@ function App() {
 
   // event handlers for country
   const handleAddCountry = (country) => {
-    console.log("country added", country);
+    const newselectedCountry = [...selectedCountry, country];
+    setSelectedCountry(newselectedCountry);
   };
 
   return (
     <div className="main_container">
-      <h3>Total countries: {counties.length}</h3>
-      <h3>Total Added countries: {}</h3>
-      <Cart></Cart>
+      {/* ///////////////////////////////////// */}
+      {/* cart component  */}
+      {/* ///////////////////////////////////// */}
+      <Cart counties={counties} selectedCountry={selectedCountry}></Cart>;
       <div className="countries_cart">
-        {/* map the component */}
+        {/* ///////////////////////////////////// */}
+        {/* map the country component */}
+        {/* ///////////////////////////////////// */}
         {counties.map((country) => (
           <Country
             key={country.ccn3}
@@ -35,7 +42,6 @@ function App() {
           ></Country>
         ))}
       </div>
-      <h1>Hellow Ultra-Nation</h1>
     </div>
   );
 }
