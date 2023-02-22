@@ -1,7 +1,7 @@
 import React from "react";
 
 const Cart = (props) => {
-  const counties = props.counties;
+  const countries = props.countries;
   const selectedCountry = props.selectedCountry;
 
   // loop through countries population and add them to the cart
@@ -13,13 +13,13 @@ const Cart = (props) => {
   }
 
   // // reduce Populations
-  // const totalPopulation = counties.reduce(
-  //   (sum, country) => sum + country.population,
+  // const totalPopulation = countries.reduce(
+  //   (sum, countries) => sum + countries.population,
   //   0
   // );
   return (
     <div>
-      <h1>Total countries: {counties.length}</h1>
+      <h1>Total countries: {countries.length}</h1>
       <h3>Total Added countries: {selectedCountry.length}</h3>
       <h3>Selected Countries Total Population: {totalPopulation}</h3>
     </div>

@@ -4,7 +4,7 @@ import Country from "./components/Country/Country";
 import Cart from "./components/Cart/Cart";
 
 function App() {
-  const [counties, setCounties] = useState([]);
+  const [countries, setCounties] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState([]);
 
   // fetch the country
@@ -29,12 +29,17 @@ function App() {
       {/* ///////////////////////////////////// */}
       {/* cart component  */}
       {/* ///////////////////////////////////// */}
-      <Cart counties={counties} selectedCountry={selectedCountry}></Cart>;
+      <Cart
+        key={countries.map((country) => country.ccn3)}
+        countries={countries}
+        selectedCountry={selectedCountry}
+      ></Cart>
+      ;
       <div className="countries_cart">
         {/* ///////////////////////////////////// */}
         {/* map the country component */}
         {/* ///////////////////////////////////// */}
-        {counties.map((country) => (
+        {countries.map((country) => (
           <Country
             key={country.ccn3}
             handleAddCountry={handleAddCountry}
